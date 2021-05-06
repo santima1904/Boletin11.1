@@ -10,14 +10,18 @@ public class Ejercicio4b {
     public static void main(String[] args) throws IOException {
         Scanner teclado = new Scanner(System.in);
         char caracter = '1';
+        String ruta = "C:\\Users\\smartinez\\Desktop\\Programacion\\Ficheros\\Boletin11.1\\ficheros\\prueba.txt";
+        //ruta del fichero prueba
 
-        File file = new File(".");
-        BufferedWriter bw = new BufferedWriter(new FileWriter(file));
+        BufferedWriter bw = new BufferedWriter(new FileWriter(new File(ruta)));
+        //buffer para escribir en el fichero
 
+        System.out.println("Pulse 0 para salir");
         while(caracter!='0'){
-            System.out.println("Pulse 0 para salir");
             caracter = teclado.next().charAt(0);
-            bw.write(caracter);
+            if (caracter!='0'){
+                bw.write(caracter);//caracter que se pasa al fichero para escribirlo
+            }
         }
         bw.close();
     }
